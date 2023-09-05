@@ -24,7 +24,12 @@
                 border: 1px dotted red;
             }
 
+            ul{
+                color: yellow;
+            }
+
             /* 클래스셀렉터 */
+            
             .txtGreen{
                 color:green;
             }
@@ -56,6 +61,18 @@
         <p>여러분</p>
         
         <div id="hello">여러분 반갑습니다.</div>
+        <div>
+            <ul> <!-- 순서없는 리스트 -->
+                <li>짜장면</li>
+                <li>짬뽕</li>
+                <li>탕수육</li>
+            </ul>
+            <ol>
+                <li>서울<li>
+                <li>도쿄</li>
+                <li>뉴욕</li>
+            </ol>
+        </div>
 
     </body> 
 </html>

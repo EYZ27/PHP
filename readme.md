@@ -15,9 +15,10 @@
                 - h1 ~ h6 : 제목
                 - div : 블럭
                 - p : 문단
-                - span : 구간
                 - ul~li
                 - ol~li
+                - span : 구간 (인라인 가능)
+                - label       (인라인 가능)
                 - form관련 태그
                     - form
                     - input
