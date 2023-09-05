@@ -18,20 +18,29 @@
             p{
                 color: blue;
             }
+            form{
+                border: 1px dotted skyblue;
+            }
+            
 
-            /* 아이디셀렉터 */
+            /* # 아이디셀렉터 */
             #hello{
                 border: 1px dotted red;
             }
 
-            ul{
-                color: yellow;
-            }
 
-            /* 클래스셀렉터 */
+            /* . 클래스셀렉터 */
             
             .txtGreen{
                 color:green;
+            }
+
+            /* > 자손셀렉터 : 꺾쇠가 있으면 자기 자손에게만 영향 */
+            li > span{
+                color : orange;
+            }
+            div > ul{
+                color: grey;
             }
 
         </style>
@@ -68,11 +77,39 @@
                 <li>탕수육</li>
             </ul>
             <ol>
-                <li>서울<li>
+                <li>서울</li>
                 <li>도쿄</li>
                 <li>뉴욕</li>
             </ol>
+            <p>
+            날씨가 <span>매우</span> 덥습니다.
+            더운 날 먹는 음식
+            <ul>
+                <li><span>매운</span> 냉면</li>
+                <li><span>시원한</span> 냉면</li>
+            </p>
         </div>
+
+        <br>
+        <form action="go.php" method="POST">
+            <h2>가입하기</h2>
+            <ul>
+                <li>
+                    <label for="">이름</label>
+                    <input type="text" name="text" id="unname"></li>
+
+                <li>
+                    <label for="">여성<input type="radio" name="gender" value="F" checked> | 
+                    <label for="">남성<input type="radio" name="gender" value="M">
+                </li>
+                <li>
+                    <label for="">광고 메시지 받기</label>
+                    <input type="checkbox" name="ad" id="checkbox" value="agree"> 동의합니다.
+                </li>
+                <li><input type="text" placeholder="인삿말 작성하기"></li>
+            </ul>
+            <input type="submit" value="전송하기">
+        </form>
 
     </body> 
 </html>
