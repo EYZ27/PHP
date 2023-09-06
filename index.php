@@ -1,115 +1,93 @@
 <!DOCTYPE html>
-<html>
-    <head><!-- 주석) 전체적 페이지에 영향을 주는 요소 -->
-        <meta charset="utf-8"/>
-        <title>My php</title>
-        
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-        <!-- CSS 문법 => SCSS ---------------------------------------------------->
-        <style type="text/css">  /* CSS 영역 */
-            /* Cascading Style Sheet 주석 = 스크래이핑 CSS selector로서 사용된다. */
-            /* 태그 셀렉터: h1 태그를 찾아서 모두 red 컬러로 바꿀 것 */
-            h1{
-                color: red;
-            }
-            div{
-                border: 1px solid red;
-            }
-            p{
-                color: blue;
-            }
-            form{
-                border: 1px dotted skyblue;
-            }
-            
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-            /* # 아이디셀렉터 */
-            #hello{
-                border: 1px dotted red;
-            }
+        <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-
-            /* . 클래스셀렉터 */
-            
-            .txtGreen{
-                color:green;
-            }
-
-            /* > 자손셀렉터 : 꺾쇠가 있으면 자기 자손에게만 영향 */
-            li > span{
-                color : orange;
-            }
-            div > ul{
-                color: grey;
-            }
-
+        <link href="css/styles.css" rel="stylesheet" />
+        <style type="text/css">
+            .row > *{
+                border: 1px solid black;
+                background-color: lightblue;
+            }            
         </style>
+    
+    <?php
+    // php 코드: java 기반
+    // 단열 주석
+    /* 다열 주석 */
+    // 변수 $변수명
+    // 세미콜론으로 마친다.
+    // 문자열+붙이기(.)+문자열...
+    // 참고: 변수형이 없다. -> 대규모 작업에 불리하다. 작은 홈페이지 정도면 쉽고 빠르고 안정적.
+    $a = 'h2';  // 이 부분만 변경 가능하다.
+    print('<'.$a.'>안녕하세요</'.$a.'>');
 
+    // 반복문 for(증감변수초기화;증감변수조건;증감){코드블럭} while
+    for ($i=1;$i<7;$i++){
+        $a='h'.$i;
+        print('<'.$a.'>안녕하세요</'.$a.'>');
+    }
 
-        <!-- javascript 영역 ----------------------------------------------------->
-        <script type="text/javascript">
-            // 자바스크립트 한 줄 주석
-            /* 자바스크립트 블럭 주석 */
-            /* 요즘은 javascript만 써서 type="text/javascript" 이 코드가 필요없다. */
-
-        </script>
+    // 이제 반복문을 사용해서 컬럼을 만들어보자!
+    ?>
     </head>
-
-    <body><!--페이지 본문-->
-        <div>
-            <h1>hello           html</h1> <!-- 띄어쓰기를 해도 표시되지 않는다. -->
-            <h2 class="txtGreen">h2</h2>
-            <h3>h3</h3>
-            <h4>...</h4>
-            <h6>h6</h6>
-            <h7>h7</j7> <!-- 해당 태그는 존재하지 않고, 사용자 정의 태그로 작성할 수 있다. -->
-            <!-- W3C(https://www.w3.org/)에서 권고사항으로 제안하고 있다 -->
+    <body>
+        <div class="row">
+            <div class="col-lg-4">.col-lg-4</div>
+            <div class="col-lg-4">.col-lg-4</div>
+            <div class="col-lg-4">.col-lg-4</div> 
         </div>
 
-        <p>안녕하세요</p>
-        <p>여러분</p>
-        
-        <div id="hello">여러분 반갑습니다.</div>
-        <div>
-            <ul> <!-- 순서없는 리스트 -->
-                <li>짜장면</li>
-                <li>짬뽕</li>
-                <li>탕수육</li>
-            </ul>
-            <ol>
-                <li>서울</li>
-                <li>도쿄</li>
-                <li>뉴욕</li>
-            </ol>
-            <p>
-            날씨가 <span>매우</span> 덥습니다.
-            더운 날 먹는 음식
-            <ul>
-                <li><span>매운</span> 냉면</li>
-                <li><span>시원한</span> 냉면</li>
-            </p>
+        <div class="row">
+            <div class="col-lg-3">.col-lg-3</div>
+            <div class="col-lg-3">.col-lg-3</div>
+            <div class="col-lg-3">.col-lg-3</div> 
+            <div class="col-lg-3">.col-lg-3</div>
         </div>
 
+        <br><h2><b>실습하기</b></h2><br>
+        <!-- 실습하기 -->
+        <div class="row">
+            <div class="col-lg-6">1 of 2</div>
+            <div class="col-lg-6">2 of 2</div>
+        </div>
         <br>
-        <form action="go.php" method="POST">
-            <h2>가입하기</h2>
-            <ul>
-                <li>
-                    <label for="">이름</label>
-                    <input type="text" name="text" id="unname"></li>
 
-                <li>
-                    <label for="">여성<input type="radio" name="gender" value="F" checked> | 
-                    <label for="">남성<input type="radio" name="gender" value="M">
-                </li>
-                <li>
-                    <label for="">광고 메시지 받기</label>
-                    <input type="checkbox" name="ad" id="checkbox" value="agree"> 동의합니다.
-                </li>
-                <li><input type="text" placeholder="인삿말 작성하기"></li>
-            </ul>
-            <input type="submit" value="전송하기">
-        </form>
+        <div class="row">
+            <div class="col-lg-1">1 of 2</div>
+            <div class="col-lg-11">2 of 2</div>
+        </div>
+        <br>
 
-    </body> 
+        <div class="row">
+            <div class="col-lg-2">1 of 2</div>
+            <div class="col-lg-10">2 of 2</div>
+        </div>
+        <br>
+
+        <div class="row">
+            <?php
+            for($i=1;$i<13;$i++){
+                print('<div class="col-md-3 col-lg-1">'.$i.' of 12</div>');
+            }
+            ?>
+
+            <div class="row row-cols-6">
+            <?php
+            for($i=1;$i<7;$i++){
+                print('<div class="col">'.$i.' of 6</div>');
+            }
+            ?>
+        </div>
+        <br>
+    </body>
 </html>

@@ -29,3 +29,7 @@
                 - address
                 - article
                 - section
+
+
+* image 로드 안될 때
+    - ctrl + shift + r : 전체 데이터 다시 가져오기
