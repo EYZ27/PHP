@@ -14,10 +14,22 @@
 
         <link href="css/styles.css" rel="stylesheet" />
         <style type="text/css">
+            * {
+                font-size: 1.5rem;
+                margin-left: 10px;
+            }
             .row > *{
                 border: 1px solid black;
                 background-color: lightblue;
-            }            
+            }
+            .redbox{
+                background-color: orange;
+                background-color: rgba( 255, 125, 0, 0.5 );
+            }
+            .row-cols-6 {
+                border: unset;
+                background-color: unset;
+            }
         </style>
     
     <?php
@@ -80,14 +92,171 @@
                 print('<div class="col-md-3 col-lg-1">'.$i.' of 12</div>');
             }
             ?>
-
-            <div class="row row-cols-6">
+        </div>
+            <br>
+        <div class="row row-cols-6">
             <?php
             for($i=1;$i<7;$i++){
                 print('<div class="col">'.$i.' of 6</div>');
             }
+            print('</div>')
             ?>
+
         </div>
         <br>
+        <br>
+        <h2>php 구문</h2>
+
+        <!-- <?php
+        $total=12;          // 부트스트랩 전체 컬럼 수
+        $wkan=3;            // 나누고 싶은 칸 수
+        $cNo=($total/$wkan);    // 클래스 숫자
+        $cnt=($total/$cNo);     // 반복 숫자
+        print($wkan.'칸으로 나누기');
+        print('<div class="row">');
+        for($i=0;$i<$cnt;$i++){     
+            $s='<div class="col-lg-'.$cNo.'"><h1>.col-md-'.$cNo.'</h1></div>'."\n";
+            print($s);
+        }
+        print('</div>');
+        print('<br>');
+        ?>
+
+        <?php
+        $total=12;          // 부트스트랩 전체 컬럼 수
+        $wkan=4;            // 나누고 싶은 칸 수
+        $cNo=($total/$wkan);    // 클래스 숫자
+        $cnt=($total/$cNo);     // 반복 숫자
+        print($wkan.'칸으로 나누기');
+        print('<div class="row">');
+        for($i=0;$i<$cnt;$i++){     
+            $s='<div class="col-lg-'.$cNo.'"><h1>.col-md-'.$cNo.'</h1></div>'."\n";
+            print($s);
+        }
+        print('</div>');
+        print('<br>');
+        ?>
+
+        <?php
+        $total=12;          // 부트스트랩 전체 컬럼 수
+        $wkan=6;            // 나누고 싶은 칸 수
+        $cNo=($total/$wkan);    // 클래스 숫자
+        $cnt=($total/$cNo);     // 반복 숫자
+        print($wkan.'칸으로 나누기');
+        print('<div class="row">');
+        for($i=0;$i<$cnt;$i++){     
+            $s='<div class="col-lg-'.$cNo.'"><h1>.col-md-'.$cNo.'</h1></div>'."\n";
+            print($s);
+        }
+        print('</div>');
+        print('<br>');
+        ?> -->
+
+        <?php
+        for ($wkan=2;$wkan<7;$wkan++){
+            $total=12;          // 부트스트랩 전체 컬럼 수
+            $cNo=($total/$wkan);    // 클래스 숫자
+            $cnt=($total/$cNo);     // 반복 숫자
+            if ($wkan ==5){
+                continue;
+            }
+            
+            print('<p>'.$wkan.'칸으로 나누기</p>');
+            print('<div class="row">');
+            for($i=0;$i<$cnt;$i++){
+                if($i %2==1){
+                    $addClass="redbox";
+                }else{
+                    $addClass="";
+                }
+                $s='<div class="col-lg-'.$cNo.' '.$addClass.'"><h1>.col-md-'.$cNo.'</h1></div>'."\n";
+                print($s);
+            }
+            print('</div>');
+            print('<br>');
+        }
+
+        // for ($kan=2;$kan<7;$kan++){
+        //     makeBcol($kan);
+        // }
+
+        $score=75;
+        $score=10*floor($score/10);
+        switch($score){
+            case 90:
+                print('<p>수</p>');
+                break;
+            case 80:
+                print('<p>우</p>');
+                break;
+            case 70:
+                print('<p>미</p>');
+                break;
+            default:
+                print('<p>낙제</p>');
+
+        }
+
+        ?>
+        <br>
+        <br>
+
+        <?php
+        print('<p>');
+        for ($i=1;$i<6;$i++){
+            for ($j=1;$j<($i+1);$j++){
+                $star = '*';
+                print(''.$star);
+            }
+            print(nl2br("\n"));
+        }
+        ?>
+
+        <?php
+        function makeHr($title=""){
+            print('<hr>');
+            print('<h1>'.$title.'</h1>');
+            print('<hr>');
+        }
+        makeHr('사다리만들기');
+
+        $kn = 1;
+        function grid1($cNo=1){
+            $other=12-$cNo;
+            $s='<div class="row">';
+            $s.='<div class="col-lg-'.$cNo.' '.$addClass.'"><h3>.col-lg-'.$cNo.'</h3></div>'."\n";
+            // $s.='<div class="col-lg-'.$other.' '.$addClass.'"><h1>.col-lg-'.$cNo.'</h1></div>'."\n";
+            $s.='</div>';
+            print($s);
+        }
+
+        for ($i=11;$i>0;$i--){
+            grid1($i);
+        }
+        for ($i=2;$i<12;$i++){
+            grid1($i);
+        }
+
+        makeHr('단순 배열');
+
+        $arr = array(1,2,'국어','수학');
+        for($i=0;$i<count($arr);$i++){
+            print('<li>인덱스('.$i.'):'.$arr[$i].'</li>');
+        }
+        foreach($arr as $a){
+            print('<li>'.$a.'</li>');
+        }
+
+        makeHr('연관 배열 key - value');
+        $arr=array(1=>'국어', 2=>'수학', 5=>'영어', '6'=>'수학');
+        for($i=0;$i<7;$i++){
+            print('<li>인덱스('.$i.'):'.$arr[$i].'</li>');
+        }
+
+        foreach($arr as $k=>$v){
+            print('<li>'.$k.':'.$v.'</li>');
+        }
+        ?>
+
     </body>
 </html>
